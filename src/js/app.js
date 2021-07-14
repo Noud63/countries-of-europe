@@ -2,6 +2,7 @@
 // https://unsplash.com/s/photos/europe?orientation=landscape
 
 import { countries } from './countries.js'
+import { getData } from './weather.js'
 
 const images = ["city1.jpg", "city2.jpg", "city3.jpg", "city4.jpg", "city5.jpg", "city6.jpg", "city7.jpg", "city8.jpg", "city9.jpg", "city10.jpg"]
 const country = ["Czech republic", "Germany", "The Netherlands", "Italy", "Belgium", "France", "Spain", "United Kingdom", "Switzerland", "Iceland"]
@@ -9,40 +10,6 @@ const flags = ["czech.png", "germany.png", "netherlands.png", "italy.png", "belg
 
 let index = 0
 let count = 1
-
-
-//Get weather
-const key = '31ba0dfb2a415daf8797fbb435b2f213'
-let getData = async (city) => {
-    const url = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&appid=${key}`;
-
-    try {
-        let data = await axios(url)
-        data = data
-        console.log(data)
-        let weather = {
-            temp: data.data.list[0].main.temp.toFixed(),
-            city: data.data.city.name,
-            des: data.data.list[0].weather[0].description,
-            icon: data.data.list[0].weather[0].icon,
-            wind: data.data.list[0].wind.speed.toFixed()
-        }
-
-        document.querySelector('.weatherData').innerHTML =
-            `<div>
-                <div>Temperature: ${Math.round(weather.temp) + ' \xB0' + "C"}</div>
-                <div>${weather.des}</div>
-            </div>
-             <div>
-                <img src="http://openweathermap.org/img/w/${weather.icon}.png" class="icon">
-            </div>
-           `
-    } catch (error) {
-        console.log(error)
-        document.querySelector('.weatherData').textContent = `Ooops no data!`
-    }
-}
-
 
 //add title flag and city pic
 function addHeader() {

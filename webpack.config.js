@@ -1,6 +1,8 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
+const Dotenv = require('dotenv-webpack');
+
 module.exports = {
     entry: './src/js/app.js',
     output: {
@@ -14,7 +16,8 @@ module.exports = {
         new HtmlWebpackPlugin({
             filename: 'index.html', // name of html file to be created
             template: './src/index.html' // source from which html file would be created
-        })
+        }),
+        new Dotenv()
     ],
     module: {
         rules: [
