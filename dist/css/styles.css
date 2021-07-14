@@ -1,0 +1,262 @@
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: rgb(206, 225, 241);
+    box-sizing: border-box;
+}
+
+.wrapper2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    box-shadow: inset 0px 0px 190px rgb(4, 31, 53);
+    background-image: url('../images/europebg.png' );
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.container3 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    max-width: 100%;
+    height: auto;
+    background-color: black;
+    margin: 0 30px 0 30px;
+    border: 1px solid rgb(116, 143, 168);
+}
+
+@media only screen and (max-width: 499px){
+    .container3 {
+        margin: 0 10px 0 10px;
+    }
+}
+
+.europe {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 72%;
+    height: 20px;
+    color:  rgb(116, 143, 168);
+    font-size:2.4rem;
+    border-bottom: 1px solid  rgb(116, 143, 168);
+}
+
+@media only screen and (max-width: 650px){
+    .europe {
+        font-size:1.8rem;    
+    }
+}
+
+.countries {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row; 
+    width: 72%;
+    height: 20px;
+} 
+
+.country {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    color:  rgb(116, 143, 168);
+    font-size: 1.4rem;
+    font-weight: bold;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+@media only screen and (max-width: 650px){
+    .country {
+        font-size:1.4rem;    
+    }
+}
+
+.flag {
+     width: 30px;
+}
+
+.imagebox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto; 
+    border: 0px solid rgb(116, 143, 168);
+    box-shadow: inset 0px 0px 10px rgb(0, 12, 22);
+}
+
+.bgImage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+}
+
+.btn {
+    width: 50px;
+    height: 50px;
+    font-size: 1rem;
+    outline: 'none';
+    border: 2px solid rgb(116, 143, 168);
+    background-color: black;
+    color: rgb(96, 121, 145);
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 501px){
+    .btn {
+    width: 40px;
+    height: 40px;
+    font-size: .8rem;
+    font-weight: bold;
+    border: 0px solid rgb(116, 143, 168);
+    outline: 'none';
+    background-color: black;
+    color: rgb(96, 121, 145);
+    cursor: pointer;
+    }
+}
+
+
+.box {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.btns {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20%;
+}
+
+.prevBtn {
+    position: absolute;
+    top: 39%;
+    left: -24px;
+}
+
+.nextBtn {
+    position: absolute;
+    top: 39%;
+    right: -24px
+}
+
+.infoBox {
+    margin: 30px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: row;
+    width:71%;
+    height: auto;
+}
+
+
+.information {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color:  rgb(116, 143, 168);
+    font-size:1rem;
+    padding-top: 1px;
+    padding-bottom: 2px;
+}
+
+.map {
+    padding-top: 5px;
+}
+
+.mapOverlay {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+.mapPopup {
+    width: 600px;
+    height: auto;
+}
+
+@media only screen and (max-width: 600px){
+    .mapPopup {
+       width: 450px;
+    }
+}
+
+@media only screen and (max-width: 480px){
+    .mapPopup {
+       width: 350px;
+    }
+}
+
+@media only screen and (max-width: 380px){
+    .mapPopup {
+       width: 320px;
+    }
+}
+
+.weatherData{
+    margin-bottom: 30px;
+   width: 71%;
+   height: auto;
+   display: flex;
+   align-items: flex-start;
+   flex-direction: row;
+   justify-content: space-between;
+   color: rgb(116, 143, 168);
+    font-size: 1rem;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.weatherHeader {
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+   width: 71%;
+   height: auto;
+   display: flex;
+   flex-direction: column;
+   justify-content: flex-start;
+   color: rgb(116, 143, 168);
+    font-size: 1.4rem;
+    font-weight: bold;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    border-bottom: 1px solid rgb(116, 143, 168);
+}
+
+.currentWeather {
+     width: 71%;
+    font-size: 1.4rem;
+    font-weight: bold;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.icon {
+    width: 50px;
+}
