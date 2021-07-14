@@ -5,14 +5,14 @@ export const getData = async (city) => {
 
     try {
         let data = await axios(url)
-        data = data
-        console.log(data)
+        data = data.data
+        const { list, city} = data
         let weather = {
-            temp: data.data.list[0].main.temp.toFixed(),
-            city: data.data.city.name,
-            des: data.data.list[0].weather[0].description,
-            icon: data.data.list[0].weather[0].icon,
-            wind: data.data.list[0].wind.speed.toFixed()
+            temp: list[0].main.temp.toFixed(),
+            city: city.name,
+            des: list[0].weather[0].description,
+            icon: list[0].weather[0].icon,
+            wind: list[0].wind.speed.toFixed()
         }
 
         document.querySelector('.weatherData').innerHTML =

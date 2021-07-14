@@ -75,7 +75,7 @@ window.addEventListener("resize", function () {
 });
 
 
-// Mouseover and mouseout functionality on map of europe
+// Mouseover and mouseout pop-up functionality on map of europe
 const element = document.querySelector('.map')
 const events = ["mouseover", "mouseout"]
 events.forEach(event => {
