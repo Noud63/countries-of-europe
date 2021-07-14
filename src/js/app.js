@@ -3,10 +3,7 @@
 
 import { countries } from './countries.js'
 import { getData } from './weather.js'
-
-const images = ["city1.jpg", "city2.jpg", "city3.jpg", "city4.jpg", "city5.jpg", "city6.jpg", "city7.jpg", "city8.jpg", "city9.jpg", "city10.jpg"]
-const country = ["Czech republic", "Germany", "The Netherlands", "Italy", "Belgium", "France", "Spain", "United Kingdom", "Switzerland", "Iceland"]
-const flags = ["czech.png", "germany.png", "netherlands.png", "italy.png", "belgium.png", "france.png", "spain.png", "uk.png", "swiss.png", "iceland.png"]
+import { images, country, flags } from './assets.js'
 
 let index = 0
 let count = 1
@@ -20,7 +17,7 @@ function addHeader() {
 addHeader()
 
 
-//add info
+//add country's info
 function addInfo() {
     document.querySelector('.information').innerHTML =
         `<div>Capitol: ${countries[index].capitol}</div>
@@ -35,6 +32,7 @@ function addInfo() {
 addInfo()
 
 
+//Next and previous button functionality
 const buttons = [...document.querySelectorAll('.btn')]
 buttons.forEach(button => {
 
@@ -65,6 +63,7 @@ buttons.forEach(button => {
 })
 
 
+// Replace next and prev button at screen-width < 500 
 window.addEventListener("resize", function () {
     if (window.innerWidth <= 500) {
         document.getElementById('prev').classList.remove("prevBtn");
@@ -76,6 +75,7 @@ window.addEventListener("resize", function () {
 });
 
 
+// Mouseover and mouseout functionality on map of europe
 const element = document.querySelector('.map')
 const events = ["mouseover", "mouseout"]
 events.forEach(event => {
