@@ -1,5 +1,4 @@
-// https://flagpedia.net/index
-// https://unsplash.com/s/photos/europe?orientation=landscape
+
 
 import { countries } from './countries.js'
 import { getData } from './weather.js'
@@ -20,14 +19,14 @@ addHeader()
 //add country's info
 function addInfo() {
     document.querySelector('.information').innerHTML =
-        `<div>Capitol: ${countries[index].capitol}</div>
+        `<div>Capital: ${countries[index].capital}</div>
          <div>Population: ${countries[index].population}</div>
          <div>Language: ${countries[index].language}</div>
          <div>Currency: ${countries[index].currency}</div>
         `
     document.querySelector('.map').innerHTML = `<img src="${countries[index].image}">`
-    document.querySelector('.weatherHeader').textContent = `Current weather for: ${countries[index].capitol}`
-    getData(`${countries[index].capitol}`)
+    document.querySelector('.weatherHeader').textContent = `Current weather for: ${countries[index].capital}`
+    getData(`${countries[index].capital}`)
 }
 addInfo()
 
