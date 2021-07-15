@@ -74,19 +74,38 @@ window.addEventListener("resize", function () {
 });
 
 
+// // Mouseover and mouseout pop-up functionality on map of europe
+// const element = document.querySelector('.map')
+// const events = ["mouseover", "mouseout"]
+// events.forEach(event => {
+//     element.addEventListener(event, function () {
+//         if (event === "mouseover") {
+//             document.querySelector('.mapOverlay').style.display = "flex";
+//             document.querySelector('.mapOverlay').innerHTML = `<img src="${countries[index].imagebig}" class="mapPopup" >`
+//         };
+
+//         if (event === "mouseout") {
+//             document.querySelector('.mapOverlay').style.display = "none";
+//         }
+//     })
+// })
+
 // Mouseover and mouseout pop-up functionality on map of europe
-const element = document.querySelector('.map')
+const element = document.querySelector('.infoBox').children
 const events = ["mouseover", "mouseout"]
 events.forEach(event => {
-    element.addEventListener(event, function () {
-        if (event === "mouseover") {
-            document.querySelector('.mapOverlay').style.display = "flex";
-            document.querySelector('.mapOverlay').innerHTML = `<img src="${countries[index].imagebig}" class="mapPopup" >`
-        };
+    if (element[1].classList.contains('map')) {
+        element[1].addEventListener(event, function (e) {
+            if (event === "mouseover") {
+                document.querySelector('.mapOverlay').style.display = "flex";
+                document.querySelector('.mapOverlay').innerHTML = `<img src="${countries[index].imagebig}" class="mapPopup" >`
+            };
 
-        if (event === "mouseout") {
-            document.querySelector('.mapOverlay').style.display = "none";
-        }
-    })
+            if (event === "mouseout") {
+                document.querySelector('.mapOverlay').style.display = "none";
+            }
+        })
+    }
+
 })
 
