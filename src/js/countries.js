@@ -121,8 +121,8 @@ export const countries = [
         population: "4.994.566",
         language: "Irish",
         currency: "Euro (&#8364;)",
-        image: "images/irered.png",
-        imagebig: "images/ireredbig.png"
+        image: "images/irelandred.png",
+        imagebig: "images/irelandredbig.png"
     },
 
     {
