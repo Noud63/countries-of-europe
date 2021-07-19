@@ -7,11 +7,14 @@ let count = 1
 
 
 //Preload imagebig images from countries for better UX
-for (var i = 0; i < countries.length; ++i) {
-    let img = new Image();
-    img.src = countries[i].imagebig;
-    console.log(img.src)
+window.onload = () => {
+    for (var i = 0; i < countries.length; ++i) {
+        let img = new Image();
+        img.src = countries[i].imagebig;
+        console.log(img.src)
+    }
 }
+
 
 //add title flag and city pic
 function addHeader() {
