@@ -6,8 +6,7 @@ export const getData = async (city) => {
     try {
         let data = await axios(url)
         data = data.data
-        console.log(data)
-        const { list, city} = data
+        const { list, city } = data
         let weather = {
             temp: list[0].main.temp.toFixed(),
             city: city.name,

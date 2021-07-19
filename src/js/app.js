@@ -1,5 +1,4 @@
 
-
 import { countries } from './countries.js'
 import { getData } from './weather.js'
 import { images, country, flags } from './assets.js'
@@ -74,38 +73,25 @@ window.addEventListener("resize", function () {
 });
 
 
-// // Mouseover and mouseout pop-up functionality on map of europe
-// const element = document.querySelector('.map')
-// const events = ["mouseover", "mouseout"]
-// events.forEach(event => {
-//     element.addEventListener(event, function () {
-//         if (event === "mouseover") {
-//             document.querySelector('.mapOverlay').style.display = "flex";
-//             document.querySelector('.mapOverlay').innerHTML = `<img src="${countries[index].imagebig}" class="mapPopup" >`
-//         };
-
-//         if (event === "mouseout") {
-//             document.querySelector('.mapOverlay').style.display = "none";
-//         }
-//     })
-// })
-
 // Mouseover and mouseout pop-up functionality on map of europe
-const element = document.querySelector('.infoBox').children
-const events = ["mouseover", "mouseout"]
+const element = document.querySelector('.map')
+const events = ["mouseenter", "mouseleave"]
 events.forEach(event => {
-    if (element[1].classList.contains('map')) {
-        element[1].addEventListener(event, function (e) {
-            if (event === "mouseover") {
-                document.querySelector('.mapOverlay').style.display = "flex";
-                document.querySelector('.mapOverlay').innerHTML = `<img src="${countries[index].imagebig}" class="mapPopup" >`
-            };
+    element.addEventListener(event, function () {
+        if (event === "mouseenter") {
+            // const html = `<div class="mapOverlay"><img src="${countries[index].imagebig}" class="mapPopup"></div>`
+            // document.querySelector('.box').insertAdjacentHTML('beforeend', html)
+            // document.querySelector('.mapOverlay').style.display = "flex";
 
-            if (event === "mouseout") {
-                document.querySelector('.mapOverlay').style.display = "none";
-            }
-        })
-    }
+            document.querySelector('.mapOverlay').innerHTML = `<img src="${countries[index].imagebig}" class="mapPopup" >`
+            document.querySelector('.mapOverlay').style.display = "flex";
+            console.log(document.querySelector('.mapOverlay').innerHTML)
+        };
 
+        if (event === "mouseleave") {
+            document.querySelector('.mapOverlay').style.display = "none";
+        }
+    })
 })
+
 
