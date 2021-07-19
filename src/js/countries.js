@@ -1,16 +1,15 @@
 export const countries = [
     {
         capital: "Prague",
-        // capitalPic: "images/city1.jpg",
         population: "10.729.258",
         language: "Czech",
         currency: "Euro (&#8364;)",
         image: "images/czechred.png",
-        imagebig: "images/czechredbig.png"
+        imagebig: "images/czechredbig.png",
+        loading: false
     },
     {
         capital: "Berlin",
-        // capitalPic: "images/city2.jpg",
         population: "83.840.000",
         language: "German",
         currency: "Euro (&#8364;)",
@@ -19,7 +18,6 @@ export const countries = [
     },
     {
         capital: "Amsterdam",
-        // capitalPic: "images/city3.jpg",
         population: "17.173.564",
         language: "Dutch",
         currency: "Euro (&#8364;)",
@@ -188,4 +186,3 @@ export const countries = [
 
 
 // --------------------------------------------------------------------------- //
-

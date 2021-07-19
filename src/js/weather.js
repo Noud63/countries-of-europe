@@ -21,7 +21,7 @@ export const getData = async (city) => {
                 <div>${weather.des}</div>
             </div>
              <div>
-                <img src="http://openweathermap.org/img/w/${weather.icon}.png" class="icon">
+                <img src="https://openweathermap.org/img/w/${weather.icon}.png" class="icon">
             </div>
            `
     } catch (error) {

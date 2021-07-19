@@ -1,10 +1,17 @@
-
 import { countries } from './countries.js'
 import { getData } from './weather.js'
 import { images, country, flags } from './assets.js'
 
 let index = 0
 let count = 1
+
+
+//Preload imagebig images from countries for better UX
+for (var i = 0; i < countries.length; ++i) {
+    let img = new Image();
+    img.src = countries[i].imagebig;
+    console.log(img.src)
+}
 
 //add title flag and city pic
 function addHeader() {
@@ -17,6 +24,7 @@ addHeader()
 
 //add country's info
 function addInfo() {
+
     document.querySelector('.information').innerHTML =
         `<div>Capital: ${countries[index].capital}</div>
          <div>Population: ${countries[index].population}</div>
@@ -79,13 +87,9 @@ const events = ["mouseenter", "mouseleave"]
 events.forEach(event => {
     element.addEventListener(event, function () {
         if (event === "mouseenter") {
-            // const html = `<div class="mapOverlay"><img src="${countries[index].imagebig}" class="mapPopup"></div>`
-            // document.querySelector('.box').insertAdjacentHTML('beforeend', html)
-            // document.querySelector('.mapOverlay').style.display = "flex";
 
             document.querySelector('.mapOverlay').innerHTML = `<img src="${countries[index].imagebig}" class="mapPopup" >`
             document.querySelector('.mapOverlay').style.display = "flex";
-            console.log(document.querySelector('.mapOverlay').innerHTML)
         };
 
         if (event === "mouseleave") {
