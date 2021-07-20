@@ -7,12 +7,10 @@ let count = 1
 
 
 //Preload imagebig images from countries for better UX
-window.onload = () => {
-    for (var i = 0; i < countries.length; ++i) {
-        let img = new Image();
-        img.src = countries[i].imagebig;
-        console.log(img.src)
-    }
+for (var i = 0; i < countries.length; ++i) {
+    let img = new Image();
+    img.src = countries[i].imagebig;
+    console.log(img.src)
 }
 
 
@@ -34,7 +32,7 @@ function addInfo() {
          <div>Language: ${countries[index].language}</div>
          <div>Currency: ${countries[index].currency}</div>
         `
-    document.querySelector('.map').innerHTML = `<img src="${countries[index].image}">`
+    document.querySelector('.map').innerHTML = `<img src="${countries[index].image}" id="${index}">`
     document.querySelector('.weatherHeader').textContent = `Current weather for: ${countries[index].capital}`
     getData(`${countries[index].capital}`)
 }
@@ -68,9 +66,9 @@ buttons.forEach(button => {
 
         addInfo()
         addHeader()
+
     })
 })
-
 
 // Replace next and prev button at screen-width < 500 
 window.addEventListener("resize", function () {
@@ -84,21 +82,62 @@ window.addEventListener("resize", function () {
 });
 
 
-// Mouseover and mouseout pop-up functionality on map of europe
+//Mouseover and mouseout pop-up functionality on map of europe
+// const element = document.querySelector('.map')
+// const events = ["mouseenter", "mouseleave"]
+// events.forEach(event => {
+//     element.addEventListener(event, function (e) {
+
+//         if (event === "mouseenter") {
+//             document.querySelector('.mapOverlay').style.display = "flex";
+//             document.querySelector('.mapOverlay').innerHTML = `<img src="${countries[index].imagebig}">`
+//         }
+
+//         if (event === "mouseleave") {
+//             document.querySelector('.mapOverlay').style.display = "none";
+//         }
+//     })
+// })
+
+
 const element = document.querySelector('.map')
-const events = ["mouseenter", "mouseleave"]
-events.forEach(event => {
-    element.addEventListener(event, function () {
-        if (event === "mouseenter") {
 
-            document.querySelector('.mapOverlay').innerHTML = `<img src="${countries[index].imagebig}" class="mapPopup" >`
-            document.querySelector('.mapOverlay').style.display = "flex";
-        };
+element.addEventListener('mouseenter', showPopup)
+function showPopup(e) {
+    if (e.target) {
+        document.querySelector('.mapOverlay').style.display = "flex";
+        document.querySelector('.mapOverlay').innerHTML = `<img src="${countries[index].imagebig}" class="popup">`
+    }
 
-        if (event === "mouseleave") {
-            document.querySelector('.mapOverlay').style.display = "none";
-        }
-    })
-})
+}
+
+element.addEventListener('mouseout', hidePopup)
+function hidePopup(e) {
+    if (e.target) {
+        document.querySelector('.mapOverlay').style.display = "none";
+        document.querySelector('.mapOverlay').innerHTML = ""
+    }
+
+}
 
 
+
+
+// const el = document.querySelector('.mapOverlay')
+// for (let i = 0; i < countries.length; i++) {
+//     const map = document.createElement('div')
+//     const popup = document.createElement('img')
+//     popup.className = "bigPic"
+//     map.className = "popup"
+//     map.id = i
+//     popup.src = countries[i].imagebig;
+//     map.appendChild(popup)
+//     el.appendChild(map);
+// }
+
+
+
+
+
+// Preload images
+//https://stackoverflow.com/questions/10240110/how-do-you-cache-an-image-in-javascript

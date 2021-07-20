@@ -192,6 +192,7 @@ body {
 
 .map {
     padding-top: 5px;
+    cursor: pointer;
 }
 
 @media only screen and (max-width: 490px){
@@ -211,9 +212,13 @@ body {
     z-index: 5;
 }
 
-.mapPopup {
-    display: block;
+.popup {
     width: 600px;
+    height: auto;
+}
+
+.bigPic {
+    width: 100%;
     height: auto;
 }
 

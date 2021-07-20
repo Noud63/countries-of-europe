@@ -6,7 +6,6 @@ export const countries = [
         currency: "Euro (&#8364;)",
         image: "images/czechred.png",
         imagebig: "images/czechredbig.png",
-        loading: false
     },
     {
         capital: "Berlin",
