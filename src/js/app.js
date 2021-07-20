@@ -13,7 +13,6 @@ for (var i = 0; i < countries.length; ++i) {
     console.log(img.src)
 }
 
-
 //add title flag and city pic
 function addHeader() {
     document.querySelector('.bgImg').innerHTML = `<img src=images/${images[index]} class="bgImage">`;
@@ -32,7 +31,7 @@ function addInfo() {
          <div>Language: ${countries[index].language}</div>
          <div>Currency: ${countries[index].currency}</div>
         `
-    document.querySelector('.map').innerHTML = `<img src="${countries[index].image}" id="${index}">`
+    document.querySelector('.map').innerHTML = `<img src="${countries[index].image}" class="mapSmall">`
     document.querySelector('.weatherHeader').textContent = `Current weather for: ${countries[index].capital}`
     getData(`${countries[index].capital}`)
 }
@@ -82,6 +81,25 @@ window.addEventListener("resize", function () {
 });
 
 
+const element = document.querySelector('.map')
+
+element.addEventListener('mouseenter', showPopup)
+function showPopup(e) {
+    if (e.target) {
+        document.querySelector('.mapOverlay').style.display = "flex";
+        document.querySelector('.mapOverlay').innerHTML = `<img src="${countries[index].imagebig}" class="popup">`
+    }
+}
+
+element.addEventListener('mouseleave', hidePopup)
+function hidePopup(e) {
+    if (e.target) {
+        document.querySelector('.mapOverlay').style.display = "none";
+        document.querySelector('.mapOverlay').innerHTML = ""
+    }
+}
+
+
 //Mouseover and mouseout pop-up functionality on map of europe
 // const element = document.querySelector('.map')
 // const events = ["mouseenter", "mouseleave"]
@@ -99,45 +117,3 @@ window.addEventListener("resize", function () {
 //     })
 // })
 
-
-const element = document.querySelector('.map')
-
-element.addEventListener('mouseenter', showPopup)
-function showPopup(e) {
-    if (e.target) {
-        document.querySelector('.mapOverlay').style.display = "flex";
-        document.querySelector('.mapOverlay').innerHTML = `<img src="${countries[index].imagebig}" class="popup">`
-    }
-
-}
-
-element.addEventListener('mouseout', hidePopup)
-function hidePopup(e) {
-    if (e.target) {
-        document.querySelector('.mapOverlay').style.display = "none";
-        document.querySelector('.mapOverlay').innerHTML = ""
-    }
-
-}
-
-
-
-
-// const el = document.querySelector('.mapOverlay')
-// for (let i = 0; i < countries.length; i++) {
-//     const map = document.createElement('div')
-//     const popup = document.createElement('img')
-//     popup.className = "bigPic"
-//     map.className = "popup"
-//     map.id = i
-//     popup.src = countries[i].imagebig;
-//     map.appendChild(popup)
-//     el.appendChild(map);
-// }
-
-
-
-
-
-// Preload images
-//https://stackoverflow.com/questions/10240110/how-do-you-cache-an-image-in-javascript

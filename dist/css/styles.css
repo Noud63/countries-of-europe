@@ -99,6 +99,8 @@ body {
     box-shadow: inset 0px 0px 10px rgb(0, 12, 22);
 }
 
+
+
 .bgImage {
     display: flex;
     justify-content: center;
@@ -106,6 +108,7 @@ body {
     width: 100%;
     height: auto;
 }
+
 
 .btn {
     width: 50px;
@@ -201,6 +204,11 @@ body {
       }
 }
 
+.mapSmall {
+    width: 90px;
+    height: 78px;
+}
+
 .mapOverlay {
     display: none;
     align-items: center;
@@ -214,11 +222,6 @@ body {
 
 .popup {
     width: 600px;
-    height: auto;
-}
-
-.bigPic {
-    width: 100%;
     height: auto;
 }
 
