@@ -12,7 +12,7 @@
 </head>
 
 <body>
-    <div class="mapOverlay"></div>
+
     <!-- SLIDER -->
     <div class="wrapper2">
 
@@ -26,12 +26,17 @@
             </div>
 
             <div class="box">
+                <div class="mapOverlay"></div>
 
-                <div class="btns">
-                    <button id="prev" class="btn prevBtn">prev</button>
-                </div>
                 <div class="imagebox">
                     <div class="bgImg"></div>
+                </div>
+
+            </div>
+
+            <div class="buttonBox">
+                <div class="btns">
+                    <button id="prev" class="btn prevBtn">prev</button>
                 </div>
                 <div class="btns">
                     <button id="next" class="btn nextBtn">next</button>
@@ -45,13 +50,16 @@
 
             <div class="weatherHeader"></div>
             <div class="weatherData">
-
+                <div class="loader">
+                    <img src="images/spinner.gif" alt="" class="spinner">
+                </div>
             </div>
+
 
         </div>
 
     </div>
-    <!-- <script src="app.js"></script> -->
+    <script src="app.js"></script>
 
 </body>
 

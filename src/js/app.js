@@ -10,8 +10,8 @@ let count = 1
 for (var i = 0; i < countries.length; ++i) {
     let img = new Image();
     img.src = countries[i].imagebig;
-    console.log(img.src)
 }
+
 
 //add title flag and city pic
 function addHeader() {
@@ -98,22 +98,3 @@ function hidePopup(e) {
         document.querySelector('.mapOverlay').innerHTML = ""
     }
 }
-
-
-//Mouseover and mouseout pop-up functionality on map of europe
-// const element = document.querySelector('.map')
-// const events = ["mouseenter", "mouseleave"]
-// events.forEach(event => {
-//     element.addEventListener(event, function (e) {
-
-//         if (event === "mouseenter") {
-//             document.querySelector('.mapOverlay').style.display = "flex";
-//             document.querySelector('.mapOverlay').innerHTML = `<img src="${countries[index].imagebig}">`
-//         }
-
-//         if (event === "mouseleave") {
-//             document.querySelector('.mapOverlay').style.display = "none";
-//         }
-//     })
-// })
-
