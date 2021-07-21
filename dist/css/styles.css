@@ -265,30 +265,28 @@ body {
     z-index: 1;
 }
 
-.mapPopup {
-   
+.popup {
     width: 600px;
     height: auto;
 }
 
+@media only screen and (max-width: 750px){
+    .popup {
+        width: 550px;
+    }
+}
+
 @media only screen and (max-width: 600px){
-    .mapPopup {
-       width: 450px;
+    .popup {
+        width: 400px;
     }
 }
 
-@media only screen and (max-width: 480px){
-    .mapPopup {
-       width: 350px;
+@media only screen and (max-width: 500px){
+    .popup {
+        width: 350px;
     }
 }
-
-@media only screen and (max-width: 380px){
-    .mapPopup {
-       width: 320px;
-    }
-}
-
 .weatherData{
    width: var(--width);
    height: 100px;
