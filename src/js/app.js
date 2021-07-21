@@ -7,9 +7,16 @@ let count = 1
 
 
 //Preload imagebig images from countries for better UX
-for (var i = 0; i < countries.length; ++i) {
-    let img = new Image();
-    img.src = countries[i].imagebig;
+window.onload = function () {
+    for (var i = 0; i < countries.length; ++i) {
+        let img = new Image();
+        img.src = countries[i].imagebig;
+    }
+
+    for (var i = 0; i < images.length; ++i) {
+        let img = new Image();
+        img.src = `images/${images[i]}`;
+    }
 }
 
 
@@ -69,6 +76,7 @@ buttons.forEach(button => {
     })
 })
 
+
 // Replace next and prev button at screen-width < 500 
 window.addEventListener("resize", function () {
     if (window.innerWidth <= 500) {
@@ -82,7 +90,6 @@ window.addEventListener("resize", function () {
 
 
 const element = document.querySelector('.map')
-
 element.addEventListener('mouseenter', showPopup)
 function showPopup(e) {
     if (e.target) {
