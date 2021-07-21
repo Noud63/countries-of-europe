@@ -26,6 +26,6 @@ export const getData = async (city) => {
            `
     } catch (error) {
         console.log(error)
-        document.querySelector('.loader').style.display = "flex;"
+        document.querySelector('.loader').style.display = "flex"
     }
 }
