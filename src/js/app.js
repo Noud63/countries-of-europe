@@ -6,21 +6,27 @@ let index = 0
 let count = 1
 
 
-//Preload imagebig images from countries for better UX
+//Preload images images for better UX
 window.onload = function () {
 
     for (var i = 0; i < countries.length; ++i) {
-        let img = new Image();
-        img.src = countries[i].imagebig;
+        let imageObject = new Image();
+        imageObject.onload = function () {
+            console.log(`${countries.length} images loaded!`);
+        }
+        imageObject.src = countries[i].imagebig;
     }
     for (var i = 0; i < images.length; ++i) {
-        let img = new Image();
-        img.src = `images/${images[i]}`;
+        let imageObject = new Image();
+        imageObject.onload = function () {
+            console.log(`${images.length} images loaded!`)
+        }
+        imageObject.src = `images/${images[i]}`;
     }
 }
 
 
-//add title flag and city pic
+//render title, flag and city pic
 function addHeader() {
     document.querySelector('.bgImg').innerHTML = `<img src=images/${images[index]} class="bgImage">`;
     document.querySelector('.country').textContent = count + ". " + country[index];
@@ -29,20 +35,30 @@ function addHeader() {
 addHeader()
 
 
-//add country's info
+//render info on country
 function addInfo() {
-
     document.querySelector('.information').innerHTML =
         `<div>Capital: ${countries[index].capital}</div>
          <div>Population: ${countries[index].population}</div>
          <div>Language: ${countries[index].language}</div>
-         <div>Currency: ${countries[index].currency}</div>
-        `
-    document.querySelector('.map').innerHTML = `<img src="${countries[index].image}" class="mapSmall">`
-    document.querySelector('.weatherHeader').textContent = `Current weather for: ${countries[index].capital}`
-    getData(`${countries[index].capital}`)
+         <div>Currency: ${countries[index].currency}</div>`
 }
 addInfo()
+
+//render weather info
+function getWeatherData() {
+    document.querySelector('.weatherHeader').textContent = `Current weather for: ${countries[index].capital}`
+    const weather = getData(`${countries[index].capital}`)
+    return weather
+}
+getWeatherData()
+
+
+//render miniature map png
+function mapOfEurope() {
+    document.querySelector('.map').innerHTML = `<img src="${countries[index].image}" class="mapSmall">`
+}
+mapOfEurope()
 
 
 //Next and previous button functionality
@@ -54,39 +70,26 @@ buttons.forEach(button => {
             index++
             count++
         }
-
         if (e.target.textContent === "prev") {
             index--
             count--
         }
-
         if (index > images.length - 1) {
             index = 0
             count = 1
         }
-
         if (index < 0) {
             index = images.length - 1
             count = images.length
         }
 
-        addInfo()
         addHeader()
+        mapOfEurope()
+        addInfo()
+        getWeatherData()
 
     })
 })
-
-
-// Replace next and prev button at screen-width < 500 
-window.addEventListener("resize", function () {
-    if (window.innerWidth <= 500) {
-        document.getElementById('prev').classList.remove("prevBtn");
-        document.getElementById('next').classList.remove("nextBtn");
-    } else {
-        document.getElementById('prev').classList.add("prevBtn");
-        document.getElementById('next').classList.add("nextBtn");
-    }
-});
 
 
 const element = document.querySelector('.map')

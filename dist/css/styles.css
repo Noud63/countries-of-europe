@@ -254,7 +254,7 @@ body {
 }
 
 .mapOverlay {
-    position: absolute;
+    position: absolute; /* container3 position: relative */
     display: none;
     align-items: center;
     justify-content: center;
@@ -361,4 +361,15 @@ body {
 .spinner {
     width: 80px;
     height: 80px;
+}
+
+.loadMessage {
+    color: red;
+    font-size: 1rem;
+}
+
+@media only screen and (max-width: 510px){
+    .loadMessage {
+         font-size: .8rem;
+    }
 }
