@@ -10,19 +10,24 @@ let count = 1
 //Preload images images for better UX
 window.onload = function () {
 
-    for (var i = 0; i < countries.length; ++i) {
+    const europeMap = []
+    for (let pic of countries) {
+        europeMap.push(pic.imagebig)
+    }
+
+    for (var i = 0; i < europeMap.length; ++i) {
         let imageObject = new Image();
         imageObject.onload = function () {
-            console.log(`${countries.length} images loaded!`);
+            console.log(`${europeMap.length} images loaded!`);
         }
-        imageObject.src = countries[i].imagebig;
+        imageObject.src = europeMap[i];
     }
     for (var i = 0; i < images.length; ++i) {
-        let imageObject = new Image();
-        imageObject.onload = function () {
+        let imageObject2 = new Image();
+        imageObject2.onload = function () {
             console.log(`${images.length} images loaded!`)
         }
-        imageObject.src = `images/${images[i]}`;
+        imageObject2.src = `images/${images[i]}`;
     }
 }
 
