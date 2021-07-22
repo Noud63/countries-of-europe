@@ -8,11 +8,11 @@ let count = 1
 
 //Preload imagebig images from countries for better UX
 window.onload = function () {
+
     for (var i = 0; i < countries.length; ++i) {
         let img = new Image();
         img.src = countries[i].imagebig;
     }
-
     for (var i = 0; i < images.length; ++i) {
         let img = new Image();
         img.src = `images/${images[i]}`;
@@ -90,7 +90,7 @@ window.addEventListener("resize", function () {
 
 
 const element = document.querySelector('.map')
-element.addEventListener('mouseenter', showPopup)
+element.addEventListener('click', showPopup)
 function showPopup(e) {
     if (e.target) {
         document.querySelector('.mapOverlay').style.display = "flex";
@@ -98,7 +98,8 @@ function showPopup(e) {
     }
 }
 
-element.addEventListener('mouseleave', hidePopup)
+const element2 = document.querySelector('.mapOverlay')
+element2.addEventListener('click', hidePopup)
 function hidePopup(e) {
     if (e.target) {
         document.querySelector('.mapOverlay').style.display = "none";
