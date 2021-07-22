@@ -2,6 +2,7 @@ import { countries } from './countries.js'
 import { getData } from './weather.js'
 import { images, country, flags } from './assets.js'
 
+
 let index = 0
 let count = 1
 
@@ -45,6 +46,7 @@ function addInfo() {
 }
 addInfo()
 
+
 //render weather info
 function getWeatherData() {
     document.querySelector('.weatherHeader').textContent = `Current weather for: ${countries[index].capital}`
@@ -54,7 +56,7 @@ function getWeatherData() {
 getWeatherData()
 
 
-//render miniature map png
+//render miniature map of europe
 function mapOfEurope() {
     document.querySelector('.map').innerHTML = `<img src="${countries[index].image}" class="mapSmall">`
 }
