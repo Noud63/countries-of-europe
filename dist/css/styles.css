@@ -108,6 +108,14 @@ body {
     }
 }
 
+@media only screen and (max-width: 360px){
+    .europe {
+        font-size:1.4rem; 
+        padding-top: 25px;
+        padding-bottom: 25px;  
+    }
+}
+
 .countries {
     padding-top: 30px;
     padding-bottom: 30px;
