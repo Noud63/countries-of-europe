@@ -29,3 +29,4 @@ export const getData = async (city) => {
         document.querySelector('.loader').style.display = "flex"
     }
 }
+

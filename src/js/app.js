@@ -121,5 +121,5 @@ function init() {
     mapOfEurope()
     addInfo()
     getWeatherData()
-    console.log("All items loaded!")
 }
+
