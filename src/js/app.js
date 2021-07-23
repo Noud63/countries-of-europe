@@ -7,29 +7,28 @@ let index = 0
 let count = 1
 
 
-//Preload images images for better UX
+//Preload images for faster rendering
 window.onload = function () {
 
     const europeMap = []
     for (let pic of countries) {
-        europeMap.push(pic.imagebig)
+        const photo = pic.imagebig.split("/")[1]
+        europeMap.push(photo)
     }
 
-    for (var i = 0; i < europeMap.length; ++i) {
+    const pics = [...europeMap, ...images]
+
+    for (var i = 0; i < pics.length; ++i) {
         let imageObject = new Image();
         imageObject.onload = function () {
-            console.log(`${europeMap.length} images loaded!`);
+            console.log(`${pics.length} images loaded!`);
         }
-        imageObject.src = europeMap[i];
-    }
-    for (var i = 0; i < images.length; ++i) {
-        let imageObject2 = new Image();
-        imageObject2.onload = function () {
-            console.log(`${images.length} images loaded!`)
-        }
-        imageObject2.src = `images/${images[i]}`;
+        imageObject.src = `images/${pics[i]}`;
     }
 }
+
+
+init()
 
 
 //render title, flag and city pic
@@ -38,7 +37,6 @@ function addHeader() {
     document.querySelector('.country').textContent = count + ". " + country[index];
     document.querySelector('.flag').innerHTML = `<img src=flags/${flags[index]}  style="width: 30px; display:block;">`
 }
-addHeader()
 
 
 //render info on country
@@ -49,7 +47,12 @@ function addInfo() {
          <div>Language: ${countries[index].language}</div>
          <div>Currency: ${countries[index].currency}</div>`
 }
-addInfo()
+
+
+//render miniature map of europe
+function mapOfEurope() {
+    document.querySelector('.map').innerHTML = `<img src="${countries[index].image}" class="mapSmall">`
+}
 
 
 //render weather info
@@ -58,14 +61,6 @@ function getWeatherData() {
     const weather = getData(`${countries[index].capital}`)
     return weather
 }
-getWeatherData()
-
-
-//render miniature map of europe
-function mapOfEurope() {
-    document.querySelector('.map').innerHTML = `<img src="${countries[index].image}" class="mapSmall">`
-}
-mapOfEurope()
 
 
 //Next and previous button functionality
@@ -99,6 +94,7 @@ buttons.forEach(button => {
 })
 
 
+//Show map of europe enlarged
 const element = document.querySelector('.map')
 element.addEventListener('click', showPopup)
 function showPopup(e) {
@@ -108,6 +104,7 @@ function showPopup(e) {
     }
 }
 
+
 const element2 = document.querySelector('.mapOverlay')
 element2.addEventListener('click', hidePopup)
 function hidePopup(e) {
@@ -115,4 +112,14 @@ function hidePopup(e) {
         document.querySelector('.mapOverlay').style.display = "none";
         document.querySelector('.mapOverlay').innerHTML = ""
     }
+}
+
+
+//Initial state of app
+function init() {
+    addHeader()
+    mapOfEurope()
+    addInfo()
+    getWeatherData()
+    console.log("All items loaded!")
 }
