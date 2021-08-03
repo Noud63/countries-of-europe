@@ -1,7 +1,7 @@
 <h1>Countries of Europe</h1>
 
 ES6 modules webpack and Babel<br>
-Openweather API<br><br>
+https://api.openweathermap.org API<br><br>
 
 Basisc info about countries in Europe<br>
 Including weather forecast for the capital cities<br><br>
