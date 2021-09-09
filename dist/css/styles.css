@@ -91,7 +91,10 @@ body {
     color:  rgb(116, 143, 168);
     font-size:2.4rem;
     font-weight: bold;
-    border-bottom: 1px solid  rgb(116, 143, 168);
+    background: -webkit-linear-gradient(#eee, rgb(28, 78, 136));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     letter-spacing: 6px;
 }
 
@@ -127,6 +130,44 @@ body {
         padding-top: 25px;
         padding-bottom: 25px; 
         letter-spacing: 3px; 
+    }
+}
+
+.search {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+     width: var(--width);
+     border: 1px solid  rgb(116, 143, 168);
+}
+
+.search > input {
+    width: 80%;
+    height: 30px;
+    border-style: none;
+    outline: none;
+    background-color: black;
+    color: rgb(116, 143, 168);
+    padding-left: 10px;
+}
+
+input::placeholder {
+    color: rgb(64, 93, 121);
+}
+
+.searchBtn {
+    width: 17%;
+    height: 33px;
+    border-style: none;
+    outline: none;
+    background-color: rgb(116, 143, 168);
+    color: black;
+    font-size: 1rem;
+}
+
+@media only screen and (max-width: 600px){
+    .searchBtn {
+        font-size: .8rem;
     }
 }
 
@@ -176,6 +217,8 @@ body {
     align-items: center;
     width: var(--width);
     height: var(--height);
+    color: white;
+    font-size: large;
 }
 
 .bgImage {
@@ -374,7 +417,7 @@ body {
 .loader {
     width: 100%;
     height: auto;
-    display: none;
+    display:flex;
     align-items: center;
     justify-content: center;
 }

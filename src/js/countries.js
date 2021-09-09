@@ -5,7 +5,7 @@ export const countries = [
         language: "Czech",
         currency: "Euro (&#8364;)",
         image: "images/czechred.png",
-        imagebig: "images/czechredbig.png",
+        imagebig: "images/czechredbig.png"
     },
     {
         capital: "Berlin",
@@ -179,9 +179,5 @@ export const countries = [
         imagebig: "images/austriaredbig.png"
     }
 
-
-
 ]
 
-
-// --------------------------------------------------------------------------- //

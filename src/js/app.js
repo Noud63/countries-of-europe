@@ -2,14 +2,11 @@ import { countries } from './countries.js'
 import { getData } from './weather.js'
 import { images, country, flags } from './assets.js'
 
-
 let index = 0
 let count = 1
 
-
 //Preload images for faster rendering
 window.onload = function () {
-
     const europeMap = []
     for (let pic of countries) {
         const photo = pic.imagebig.split("/")[1]
@@ -17,7 +14,6 @@ window.onload = function () {
     }
 
     const pics = [...europeMap, ...images]
-
     for (var i = 0; i < pics.length; ++i) {
         let imageObject = new Image();
         imageObject.onload = function () {
@@ -27,9 +23,7 @@ window.onload = function () {
     }
 }
 
-
 init()
-
 
 //render title, flag and city pic
 function addHeader() {
@@ -85,6 +79,7 @@ buttons.forEach(button => {
             count = images.length
         }
 
+        document.querySelector('.bgImg').innerHTML = ""
         addHeader()
         mapOfEurope()
         addInfo()
@@ -111,6 +106,34 @@ function hidePopup(e) {
     if (e.target) {
         document.querySelector('.mapOverlay').style.display = "none";
         document.querySelector('.mapOverlay').innerHTML = ""
+    }
+}
+
+
+export function loader(parentElement) {
+    const html = `<div class="loader">
+                    <img src="images/spinner.gif" alt="" class="spinner">
+                </div>`
+    parentElement.insertAdjacentHTML('beforeend', html)
+}
+
+
+const btn = document.querySelector('.searchBtn')
+const input = document.querySelector('.searchField')
+btn.addEventListener('click', searchCountry)
+function searchCountry(e) {
+    input.value === "" ? alert('No search query') : findCountry(input.value.toLowerCase())
+    input.value = ""
+}
+
+
+function findCountry(land) {
+    for (let i = 0; i < country.length; i++) {
+        if (country[i].toLowerCase() === land) {
+            index = i
+            count = i + 1
+            init()
+        }
     }
 }
 

@@ -1,4 +1,6 @@
 //Get weather
+import { loader } from './app'
+
 const key = process.env.API_KEY
 export const getData = async (city) => {
     const url = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&appid=${key}`;
@@ -26,7 +28,7 @@ export const getData = async (city) => {
            `
     } catch (error) {
         console.log(error)
-        document.querySelector('.loader').style.display = "flex"
+        loader(document.querySelector('.weatherData'))
     }
 }
 
