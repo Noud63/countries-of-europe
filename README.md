@@ -7,5 +7,5 @@ Basisc info about countries in Europe<br>
 Including weather forecast for the capital cities<br><br>
 
 
-![europa](https://user-images.githubusercontent.com/38325801/128051391-1b6cb785-16ea-49db-b330-821254650bc0.png)<br><br>
-![europa2](https://user-images.githubusercontent.com/38325801/128149979-96ee8e0d-4b66-480f-ac04-ccb83cb01e22.png)
+![europa](https://user-images.githubusercontent.com/38325801/133061681-149653d5-946c-4704-9d09-affaa5eab44b.png)<br><br>
+![europa2](https://user-images.githubusercontent.com/38325801/133060545-6d4b86ac-08ad-449d-8620-fba3410a8453.png)
