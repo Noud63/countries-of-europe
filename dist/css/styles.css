@@ -171,6 +171,42 @@ input::placeholder {
     }
 }
 
+.allCountriesBtn {
+    margin-left: 3px;
+    margin-right: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 10px;
+    width: var(--width);
+    height: 38px;
+    color: rgb(116, 143, 168);
+    background-color: rgb(0, 0, 0);
+    font-size: 1rem;
+    white-space:nowrap;
+    overflow-x: scroll;
+    overflow-y: hidden;
+}
+
+.allCountriesBtn::-webkit-scrollbar-track
+{
+  background-color: rgb(0, 0, 0);
+}
+
+.allCountriesBtn::-webkit-scrollbar
+{
+  height: 5px;
+  width: 10px;
+  background-color: #F5F5F5;
+}
+
+.allCountriesBtn::-webkit-scrollbar-thumb
+{
+  border-radius: 8px;
+  /* -webkit-box-shadow: inset 0 0 6px rgb(0, 11, 34);
+  box-shadow: inset 0 0 6px rgb(0, 11, 34); */
+  background-color: rgb(98, 124, 163);
+}
 .countries {
     padding-top: 30px;
     padding-bottom: 30px;
@@ -344,6 +380,7 @@ input::placeholder {
 @media only screen and (max-width: 600px){
     .popup, .mapOverlay {
         width: 420px;
+        align-items: center;
     }
 }
 
