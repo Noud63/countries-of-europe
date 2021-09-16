@@ -267,6 +267,151 @@ export const countries = [
         currency: "Euro (\u20AC)",
         image: "/images/montenegrored.png",
         imagebig: "/images/montenegroredbig.png"
-    }
+    },
+
+    {
+        capital: "Vatican City",
+        population: "800",
+        language: "Italian",
+        currency: "Euro (\u20AC)",
+        image: "/images/vaticancityred.png",
+        imagebig: "/images/vaticancityredbig.png"
+    },
+
+    {
+        capital: "Skopje",
+        population: "2.083.272",
+        language: "Macedonian",
+        currency: "Denar (ден)",
+        image: "/images/northmacedoniared.png",
+        imagebig: "/images/northmacedoniaredbig.png"
+    },
+
+    {
+        capital: "Athens",
+        population: "10.362.029",
+        language: "Greek",
+        currency: "Euro (\u20AC)",
+        image: "/images/greecered.png",
+        imagebig: "/images/greeceredbig.png"
+    },
+
+    {
+        capital: "Bratislava",
+        population: "5.462.817",
+        language: "Slovak",
+        currency: "Euro (\u20AC)",
+        image: "/images/slovakiared.png",
+        imagebig: "/images/slovakiaredbig.png"
+    },
+
+    {
+        capital: "Vaduz",
+        population: "38.259",
+        language: "German",
+        currency: "Swiss Franc (SFr)",
+        image: "/images/liechtensteinred.png",
+        imagebig: "/images/liechtensteinredbig.png"
+    },
+
+    {
+        capital: "San Marino",
+        population: "34.017",
+        language: "Italian",
+        currency: "Euro (\u20AC)",
+        image: "/images/sanmarinored.png",
+        imagebig: "/images/sanmarinoredbig.png"
+    },
+
+    {
+        capital: "Pristina",
+        population: "1.767.881",
+        language: "Albanian/Serbian",
+        currency: "Euro (\u20AC)",
+        image: "/images/kosovored.png",
+        imagebig: "/images/kosovoredbig.png"
+    },
+
+    {
+        capital: "Belgrade",
+        population: "8.695.095",
+        language: "Serbian",
+        currency: "Dinar (дин)",
+        image: "/images/serbiared.png",
+        imagebig: "/images/serbiaredbig.png"
+    },
+
+    {
+        capital: "Zagreb",
+        population: "4.074.849",
+        language: "Croatian",
+        currency: "Kuna (HRK)",
+        image: "/images/croatiared.png",
+        imagebig: "/images/croatiaredbig.png"
+    },
+
+    {
+        capital: "Sarajevo",
+        population: "3.256.355",
+        language: "Bosnian/Croatian/Serbian",
+        currency: "Bosnian Mark (BAM)",
+        image: "/images/bosniared.png",
+        imagebig: "/images/bosniaredbig.png"
+    },
+
+    {
+        capital: "Sofia",
+        population: "6.885.447",
+        language: "Bulgarian",
+        currency: "Lev (BGN)",
+        image: "/images/bulgariared.png",
+        imagebig: "/images/bulgariaredbig.png"
+    },
+
+    {
+        capital: "Copenhagen",
+        population: "5.816.682",
+        language: "Danish",
+        currency: "Krone (Kr)",
+        image: "/images/denmarkred.png",
+        imagebig: "/images/denmarkredbig.png"
+    },
+
+    {
+        capital: "Tirana",
+        population: "2.874.024",
+        language: "Albanian",
+        currency: "Lek (L)",
+        image: "/images/albaniared.png",
+        imagebig: "/images/albaniaredbig.png"
+    },
+
+    {
+        capital: "Valletta",
+        population: "442.954",
+        language: "Maltese",
+        currency: "Euro (\u20AC)",
+        image: "/images/maltared.png",
+        imagebig: "/images/maltaredbig.png"
+    },
+
+    {
+        capital: "Monaco",
+        population: "39.576",
+        language: "French",
+        currency: "Euro (\u20AC)",
+        image: "/images/monacored.png",
+        imagebig: "/images/monacoredbig.png"
+    },
+
+    {
+        capital: "Moscow",
+        population: "146.009.421",
+        language: "Russian",
+        currency: "Ruble (RUB)",
+        image: "/images/russiared.png",
+        imagebig: "/images/russiaredbig.png"
+    },
+
 
 ]
